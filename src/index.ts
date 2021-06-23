@@ -2,6 +2,8 @@ export const toTsvector = (
   fragment: string | string[],
   options?: { weight?: string }
 ) => {
+  if (fragment === undefined || fragment === null) return '';
+
   const words =
     typeof fragment === 'string'
       ? fragment
